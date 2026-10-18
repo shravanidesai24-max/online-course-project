@@ -1,0 +1,41 @@
+
+{% extends "onlinecourse/course_base_bootstrap.html" %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">{{ course.name }}</h2>
+
+            {% if course.description %}
+                <p class="card-text">{{ course.description }}</p>
+            {% endif %}
+
+            <hr>
+
+            <h4 class="mb-3">Course Lessons</h4>
+
+            {% if course.lessons.all %}
+                <div class="list-group">
+                    {% for lesson in course.lessons.all %}
+                        <div class="list-group-item">
+                            <h5 class="mb-1">
+                                {{ forloop.counter }}. {{ lesson.title }}
+                            </h5>
+                            <p class="mb-0">{{ lesson.content }}</p>
+                        </div>
+                    {% empty %}
+                        <div class="alert alert-info">
+                            No lessons are available for this course yet.
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-info">
+                    No lessons are available for this course yet.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

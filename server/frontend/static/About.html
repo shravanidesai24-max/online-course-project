@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Cars Dealership</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Local stylesheet: create this file in the same folder -->
+    <link rel="stylesheet" href="About.css">
+
+    <style>
+        :root {
+            --primary: #12345a;
+            --accent: #f5a623;
+            --light-bg: #f4f7fb;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #263445;
+            background: #ffffff;
+        }
+
+        .navbar {
+            background: var(--primary);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand i {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 25, 46, 0.92),
+                    rgba(8, 25, 46, 0.45)
+                ),
+                url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
+                center 55% / cover no-repeat;
+            color: white;
+            padding: 75px 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .feature-card {
+            height: 100%;
+            padding: 28px;
+            background: var(--light-bg);
+            border-radius: 14px;
+            border: 1px solid #e6edf5;
+        }
+
+        .feature-icon {
+            width: 54px;
+            height: 54px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .team-card {
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid #e5eaf0;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(15, 35, 60, 0.07);
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(15, 35, 60, 0.13);
+        }
+
+        .team-photo {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        .team-info {
+            padding: 24px;
+        }
+
+        .team-info h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .team-role {
+            color: #c17a08;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .team-email {
+            overflow-wrap: anywhere;
+            font-size: 0.9rem;
+        }
+
+        .team-email a {
+            color: #315b85;
+            text-decoration: none;
+        }
+
+        .team-email a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-banner {
+            background: var(--primary);
+            color: white;
+            border-radius: 18px;
+            padding: 42px;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #14253a;
+            border: none;
+            font-weight: 700;
+            padding: 12px 24px;
+        }
+
+        .btn-accent:hover {
+            background: #ffc04d;
+            color: #14253a;
+        }
+
+        footer {
+            background: #0a1c31;
+            color: #d7e0eb;
+            padding: 28px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 300px;
+                padding: 55px 0;
+            }
+
+            .about-image {
+                height: 250px;
+            }
+
+            .team-photo {
+                height: 280px;
+            }
+
+            .contact-banner {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-car-side me-2"></i>
+                Cars Dealership
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="About.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero">
+        <div class="container">
+            <div class="col-lg-8">
+                <p class="text-uppercase fw-bold mb-3"
+                   style="color: #f5a623; letter-spacing: 2px;">
+                    Driven by trust. Built around you.
+                </p>
+
+                <h1>About <span>Cars Dealership</span></h1>
+
+                <p class="lead mt-3">
+                    Making car buying easier through trusted dealerships,
+                    transparent information, and genuine customer reviews.
+                </p>
+
+                <a href="#our-story" class="btn btn-accent mt-3">
+                    Discover Our Story
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About our company -->
+    <section id="our-story" class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img
+                        class="about-image"
+                        src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1000&q=85"
+                        alt="Automotive business professionals discussing customer service"
+                        loading="lazy">
+                </div>
+
+                <div class="col-lg-6">
+                    <p class="text-uppercase fw-bold"
+                       style="color: #c17a08;">
+                        Who We Are
+                    </p>
+
+                    <h2 class="section-title mb-4">
+                        Helping You Find the Right Car
+                    </h2>
+
+                    <p>
+                        Cars Dealership is a car retail platform designed
+                        to help customers discover dealership branches
+                        across the United States and make informed
+                        purchasing decisions.
+                    </p>
+
+                    <p>
+                        Our web application brings dealership information
+                        and customer feedback together in one convenient
+                        place. Visitors can explore branches, read reviews,
+                        share their experiences, and make more confident
+                        decisions.
+                    </p>
+
+                    <p>
+                        We focus on usability, responsive design,
+                        transparency, and a better online car-buying
+                        experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, vision and values -->
+    <section class="py-5" style="background: #f4f7fb;">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What Drives Us</h2>
+                <p class="section-subtitle mt-3">
+                    Our mission, vision, and values shape the experience
+                    we create for every customer.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p class="mb-0">
+                            To connect car buyers with useful dealership
+                            information and authentic customer feedback
+                            through an accessible online platform.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p class="mb-0">
+                            To make the car-buying journey simpler,
+                            more transparent, and more convenient for
+                            customers throughout the United States.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p class="mb-0">
+                            We value customer trust, honest feedback,
+                            reliable information, inclusive design,
+                            and continuous improvement.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team section -->
+    <section id="our-team" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle mt-3">
+                    Our project team combines frontend development,
+                    backend engineering, database management, and
+                    user-focused design to build the Cars Dealership
+                    application.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Team member 1 -->
+                <div class="col-sm-6 col-lg-3">
+                    <article class="team-card">
+                        <img
+                            class="team-photo"
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85"
+                            alt="Professional portrait representing the project lead"
+                            loading="lazy">
+
+                        <div class="team-info">
+                            <h3>Alex Morgan</h3>
+                            <p class="team-role">Project Lead</p>
+                            <p>
+                                Coordinates project activities,
+                                requirements, planning, and delivery
+                                of the dealership application.
+                            </p>
+                            <p class="team-email mb-0">
+                                <i class="fa-solid fa-envelope me-2"></i>
+                                <a href="mailto:alex.morgan@example.com">
+                                    alex.morgan@example.com
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Team member 2 -->
+                <div class="col-sm-6 col-lg-3">
+                    <article class="team-card">
+                        <img
+                            class="team-photo"
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85"
+                            alt="Professional portrait representing the frontend developer"
+                            loading="lazy">
+
+                        <div class="team-info">
+                            <h3>Sarah Williams</h3>
+                            <p class="team-role">Frontend Developer</p>
+                            <p>
+                                Develops responsive interfaces and
+                                user-friendly pages for dealership
+                                browsing and customer reviews.
+                            </p>
+                            <p class="team-email mb-0">
+                                <i class="fa-solid fa-envelope me-2"></i>
+                                <a href="mailto:sarah.williams@example.com">
+                                    sarah.williams@example.com
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Team member 3 -->
+                <div class="col-sm-6 col-lg-3">
+                    <article class="team-card">
+                        <img
+                            class="team-photo"
+                            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85"
+                            alt="Professional portrait representing the backend developer"
+                            loading="lazy">
+
+                        <div class="team-info">
+                            <h3>David Johnson</h3>
+                            <p class="team-role">Backend Developer</p>
+                            <p>
+                                Works on server-side services,
+                                application APIs, and the processing
+                                of dealership and review data.
+                            </p>
+                            <p class="team-email mb-0">
+                                <i class="fa-solid fa-envelope me-2"></i>
+                                <a href="mailto:david.johnson@example.com">
+                                    david.johnson@example.com
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Team member 4 -->
+                <div class="col-sm-6 col-lg-3">
+                    <article class="team-card">
+                        <img
+                            class="team-photo"
+                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85"
+                            alt="Professional portrait representing the database and testing specialist"
+                            loading="lazy">
+
+                        <div class="team-info">
+                            <h3>Emily Davis</h3>
+                            <p class="team-role">Database &amp; QA Engineer</p>
+                            <p>
+                                Supports data organization,
+                                application testing, and reliable
+                                handling of dealership reviews.
+                            </p>
+                            <p class="team-email mb-0">
+                                <i class="fa-solid fa-envelope me-2"></i>
+                                <a href="mailto:emily.davis@example.com">
+                                    emily.davis@example.com
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+            <p class="text-center text-secondary small mt-4">
+                Note: The team names and email addresses above are
+                illustrative examples. Replace them with your actual
+                project team details before submission.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="py-5" style="background: #f4f7fb;">
+        <div class="container py-3">
+            <div class="contact-banner text-center">
+                <h2 class="fw-bold">Have Questions?</h2>
+                <p class="mt-3 mb-4">
+                    We are committed to making your dealership
+                    discovery and review experience better.
+                </p>
+                <a class="btn btn-accent"
+                   href="mailto:contact@example.com">
+                    <i class="fa-solid fa-envelope me-2"></i>
+                    Contact Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="fw-bold mb-2">
+                <i class="fa-solid fa-car-side me-2"></i>
+                Cars Dealership
+            </p>
+            <p class="mb-2">
+                Your trusted companion for exploring dealerships
+                and customer reviews.
+            </p>
+            <p class="small mb-0">
+                &copy; <span id="currentYear"></span>
+                Cars Dealership. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
